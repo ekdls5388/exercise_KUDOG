@@ -38,17 +38,161 @@ class _LoginPageState extends State<LoginPage> {
           child: Container(),
         ),
       ),
-      body: Stack(
-        children: [
-          CustomSwitch(
-            value: _isSwitched,
-            onChanged: (value) {
-              setState(() {
-                _isSwitched = value;
-              });
-            },
+      body: Container(
+        height: MediaQuery.of(context).size.height * 729/788,
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, -4),
+              blurRadius: 8,
+              color: Color.fromRGBO(105, 56, 56, 0.15),
+            ),
+          ],
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(30),
+            topRight: Radius.circular(30),
           ),
-        ],
+        ),
+        child:
+            Column(
+              children: [
+                SizedBox(height: 38),
+                Container(
+                  padding: EdgeInsets.only(left: 24, right: 24,),
+                  child : Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("홍길동",
+                        style: TextStyle(
+                          fontFamily: "Noto Sans KR",
+                          fontSize: 25,
+                          fontWeight: FontWeight.w700,
+                          color: Color(0xFF444444),
+                        ),),
+                      Container(
+                        width: 48,
+                        height: 27.27,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(39),
+                          border: Border.all(color: Color(0xFFA4A4A4), width: 1),
+                        ),
+                        padding: EdgeInsets.fromLTRB(13, 4, 12, 6.27),
+                        child: Text("편집",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            fontFamily: "Noto Sans KR",
+                          ),),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 36),
+                Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 67/788,
+                  decoration: BoxDecoration(
+                      color: Color(0xFFF6F6F6)),
+                  padding: EdgeInsets.fromLTRB(24, 19, 24, 19),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children : [
+                      Text("공지사항 메일 수신",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 18,
+                          fontFamily: "Noto Sans KR",
+                          color: Color(0xFF444444),
+                        ),),
+                      CustomSwitch(
+                        value: _isSwitched,
+                        onChanged: (value) {
+                          setState(() {
+                            _isSwitched = value;
+                          });
+                        },
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 26),
+                Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 67/788,
+                  padding: EdgeInsets.only(left: 24, right: 24),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("서비스 소개",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          fontFamily: "Noto Sans KR",
+                          color: Color(0xFF444444),
+                        ),),
+                      Image.asset('assets/right_sign.png', width: 13, height: 19,),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 67/788,
+                  padding: EdgeInsets.only(left: 24, right: 24),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("FAQ",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          fontFamily: "Noto Sans KR",
+                          color: Color(0xFF444444),
+                        ),),
+                      Image.asset('assets/right_sign.png', width: 13, height: 19,),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 67/788,
+                  padding: EdgeInsets.only(left: 24, right: 24),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("문의하기",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          fontFamily: "Noto Sans KR",
+                          color: Color(0xFF444444),
+                        ),),
+                      Image.asset('assets/right_sign.png', width: 13, height: 19,),
+                    ],
+                  ),
+                ),
+                Container(
+                  width: double.infinity,
+                  height: MediaQuery.of(context).size.height * 67/788,
+                  padding: EdgeInsets.only(left: 24, right: 24),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("로그아웃",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          fontFamily: "Noto Sans KR",
+                          color: Color(0xFF444444),
+                        ),),
+                      Image.asset('assets/right_sign.png', width: 13, height: 19,),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+
+
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
